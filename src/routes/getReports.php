@@ -1,6 +1,6 @@
 <?php
 
-$app->post('/api/GeoRanker/getReports', function ($request, $response, $args) {
+$app->post('/api/GeoRanker/getReports', function ($request, $response) {
     /** @var \Slim\Http\Response $response */
     /** @var \Slim\Http\Request $request */
     /** @var \Models\checkRequest $checkRequest */
@@ -19,10 +19,10 @@ $app->post('/api/GeoRanker/getReports', function ($request, $response, $args) {
     $params['email'] = $postData['args']['email'];
     $params['session'] = $postData['args']['session'];
 
-    if (isset($postData['args']['pageNum']) && strlen($postData['args']['pageNum']) > 0) {
+    if (!empty($postData['args']['pageNum'])) {
         $params['page'] = $postData['args']['pageNum'];
     }
-    if (isset($postData['args']['itemsPerPage']) && strlen($postData['args']['itemsPerPage']) > 0) {
+    if (!empty($postData['args']['itemsPerPage'])) {
         $params['itemsperpage'] = $postData['args']['itemsPerPage'];
     }
 
