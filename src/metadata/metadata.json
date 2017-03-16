@@ -181,7 +181,7 @@
       ]
     },
     {
-      "name": "getApiChangelog",
+      "name": "getApiChangeLog",
       "description": "Read the API ChageLog",
       "args": [
         {
@@ -312,6 +312,12 @@
           "name": "session",
           "type": "String",
           "info": "User session obtained from login method",
+          "required": true
+        },
+        {
+          "name": "countryCode",
+          "type": "String",
+          "info": "Country code",
           "required": true
         }
       ],
