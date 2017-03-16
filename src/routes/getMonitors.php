@@ -1,6 +1,6 @@
 <?php
 
-$app->post('/api/GeoRanker/getMonitors', function ($request, $response, $args) {
+$app->post('/api/GeoRanker/getMonitors', function ($request, $response) {
     /** @var \Slim\Http\Response $response */
     /** @var \Slim\Http\Request $request */
     /** @var \Models\checkRequest $checkRequest */
@@ -16,18 +16,11 @@ $app->post('/api/GeoRanker/getMonitors', function ($request, $response, $args) {
 
     $url = $settings['apiUrl'] . "/monitor/list.json?";
 
-    if (isset($postData['args']['pageNum']) && strlen($postData['args']['pageNum']) == 0) {
-        unset($postData['args']['pageNum']);
-    }
-    if (isset($postData['args']['itemsPerPage']) && strlen($postData['args']['itemsPerPage']) == 0) {
-        unset($postData['args']['itemsPerPage']);
-    }
-
     try {
         /** @var GuzzleHttp\Client $client */
         $client = $this->httpClient;
         $vendorResponse = $client->get($url, [
-            'query' => $postData['args']
+            'query' => array_change_key_case($postData['args'], CASE_LOWER)
         ]);
         $vendorResponseBody = $vendorResponse->getBody()->getContents();
         if ($vendorResponse->getStatusCode() == '200') {
