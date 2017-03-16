@@ -46,9 +46,9 @@ Update the user settings
 | isSendNews          | Boolean| Inform or not about new features/updates
 | notificationsTime   | String | Notification time
 | timezone            | String | Set your timezone (notificationTime based on this parametr)
-| wlHeading           | String | 
-| wlSubheading        | String | 
-| wlUserLogo          | String | 
+| wlHeading           | String | Title (This field using on the Whitelabel settings for PDF reports generated on GeoRanker GUI) 
+| wlSubheading        | String | Subtitle (This field using on the Whitelabel settings for PDF reports generated on GeoRanker GUI)
+| wlUserLogo          | String | Logo url (This field using on the Whitelabel settings for PDF reports generated on GeoRanker GUI)
 
 ## GeoRanker.getApiChangelog
 Read the API ChageLog

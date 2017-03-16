@@ -3,7 +3,7 @@
   "tagline": "GeoRanker API",
   "description": "Get real-time search engine optimization data by location.",
   "image": "http://logo.clearbit.com/georanker.com",
-  "repo": "",
+  "repo": "https://github.com/RapidSoftwareSolutions/Marketplace-GeoRanker-Package",
   "keywords": [
     "API",
     "SEO",
@@ -123,49 +123,49 @@
         {
           "name": "countryCode",
           "type": "String",
-          "info": "",
+          "info": "Country code (example: DE = Germany)",
           "required": false
         },
         {
           "name": "isMergeNotifications",
           "type": "Boolean",
-          "info": "",
+          "info": "Send or not all email notifications merged in your specified time.",
           "required": false
         },
         {
           "name": "isSendNews",
           "type": "Boolean",
-          "info": "",
+          "info": "Inform or not about new features/updates",
           "required": false
         },
         {
           "name": "notificationsTime",
           "type": "String",
-          "info": "",
+          "info": "Notification time",
           "required": false
         },
         {
           "name": "timezone",
           "type": "String",
-          "info": "",
+          "info": "Set your timezone (notificationTime based on this parametr)",
           "required": false
         },
         {
           "name": "wlHeading",
           "type": "String",
-          "info": "",
+          "info": "Title (This field using on the Whitelabel settings for PDF reports generated on GeoRanker GUI)",
           "required": false
         },
         {
           "name": "wlSubheading",
           "type": "String",
-          "info": "",
+          "info": "Subtitle (This field using on the Whitelabel settings for PDF reports generated on GeoRanker GUI)",
           "required": false
         },
         {
           "name": "wlUserLogo",
           "type": "String",
-          "info": "",
+          "info": "Logo url (This field using on the Whitelabel settings for PDF reports generated on GeoRanker GUI)",
           "required": false
         }
       ],
@@ -513,7 +513,7 @@
         {
           "name": "maxCities",
           "type": "Number",
-          "info": "",
+          "info": "Max City count",
           "required": false
         },
         {
@@ -525,7 +525,7 @@
         {
           "name": "totalResults",
           "type": "Number",
-          "info": "",
+          "info": "The maximum amount of results we will crawl. Usually, you want to keep this at 100.",
           "required": false
         },
         {
