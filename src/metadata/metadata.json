@@ -1,0 +1,1303 @@
+{
+  "package": "GeoRanker",
+  "tagline": "GeoRanker API",
+  "description": "Get real-time search engine optimization data by location.",
+  "image": "http://logo.clearbit.com/georanker.com",
+  "repo": "",
+  "keywords": [
+    "API",
+    "SEO",
+    "SERP",
+    "advertising",
+    "engine",
+    "marketing",
+    "search"
+  ],
+  "accounts": {
+    "domain": "georanker.com",
+    "credentials": [
+      "apiKey"
+    ]
+  },
+  "blocks": [
+    {
+      "name": "login",
+      "description": "Create a new session key for the user. (Execute this first)",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "String",
+          "info": "User apiKey obtained from georanker.com",
+          "required": true
+        },
+        {
+          "name": "email",
+          "type": "String",
+          "info": "User email adress",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getMe",
+      "description": "Read the user information",
+      "args": [
+        {
+          "name": "email",
+          "type": "String",
+          "info": "User email",
+          "required": true
+        },
+        {
+          "name": "session",
+          "type": "String",
+          "info": "User session obtained from login method",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getMySettings",
+      "description": "Read the user settings",
+      "args": [
+        {
+          "name": "email",
+          "type": "String",
+          "info": "User email",
+          "required": true
+        },
+        {
+          "name": "session",
+          "type": "String",
+          "info": "User session obtained from login method",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "updateMySettings",
+      "description": "Update the user settings",
+      "args": [
+        {
+          "name": "email",
+          "type": "String",
+          "info": "User email",
+          "required": true
+        },
+        {
+          "name": "session",
+          "type": "String",
+          "info": "User session obtained from login method",
+          "required": true
+        },
+        {
+          "name": "countryCode",
+          "type": "String",
+          "info": "",
+          "required": false
+        },
+        {
+          "name": "isMergeNotifications",
+          "type": "Boolean",
+          "info": "",
+          "required": false
+        },
+        {
+          "name": "isSendNews",
+          "type": "Boolean",
+          "info": "",
+          "required": false
+        },
+        {
+          "name": "notificationsTime",
+          "type": "String",
+          "info": "",
+          "required": false
+        },
+        {
+          "name": "timezone",
+          "type": "String",
+          "info": "",
+          "required": false
+        },
+        {
+          "name": "wlHeading",
+          "type": "String",
+          "info": "",
+          "required": false
+        },
+        {
+          "name": "wlSubheading",
+          "type": "String",
+          "info": "",
+          "required": false
+        },
+        {
+          "name": "wlUserLogo",
+          "type": "String",
+          "info": "",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getApiChangelog",
+      "description": "Read the API ChageLog",
+      "args": [
+        {
+          "name": "email",
+          "type": "String",
+          "info": "User email",
+          "required": true
+        },
+        {
+          "name": "session",
+          "type": "String",
+          "info": "User session obtained from login method",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getGeoRankerBlogNews",
+      "description": "Read the News from GeoRanker Blog",
+      "args": [
+        {
+          "name": "email",
+          "type": "String",
+          "info": "User email",
+          "required": true
+        },
+        {
+          "name": "session",
+          "type": "String",
+          "info": "User session obtained from login method",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getCountryDataByCode",
+      "description": "Read the complete data of a country by code",
+      "args": [
+        {
+          "name": "email",
+          "type": "String",
+          "info": "User email",
+          "required": true
+        },
+        {
+          "name": "session",
+          "type": "String",
+          "info": "User session obtained from login method",
+          "required": true
+        },
+        {
+          "name": "code",
+          "type": "String",
+          "info": "Country code USA=us, Germany=de",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getCountries",
+      "description": "Read the full list of countries",
+      "args": [
+        {
+          "name": "email",
+          "type": "String",
+          "info": "User email",
+          "required": true
+        },
+        {
+          "name": "session",
+          "type": "String",
+          "info": "User session obtained from login method",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getLanguageDataByCode",
+      "description": "Read the complete data of a language by code",
+      "args": [
+        {
+          "name": "email",
+          "type": "String",
+          "info": "User email",
+          "required": true
+        },
+        {
+          "name": "session",
+          "type": "String",
+          "info": "User session obtained from login method",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getLanguages",
+      "description": "Read the full list of languages",
+      "args": [
+        {
+          "name": "email",
+          "type": "String",
+          "info": "User email",
+          "required": true
+        },
+        {
+          "name": "session",
+          "type": "String",
+          "info": "User session obtained from login method",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getReports",
+      "description": "Read the list of Reports",
+      "args": [
+        {
+          "name": "email",
+          "type": "String",
+          "info": "User email",
+          "required": true
+        },
+        {
+          "name": "session",
+          "type": "String",
+          "info": "User session obtained from login method",
+          "required": true
+        },
+        {
+          "name": "pageNum",
+          "type": "Number",
+          "info": "The page number. Default: 1",
+          "required": false
+        },
+        {
+          "name": "itemsPerPage",
+          "type": "Number",
+          "info": "The max number of reports that each page will contain. Default: 30",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getSingleReport",
+      "description": "Read the complete data of a report",
+      "args": [
+        {
+          "name": "email",
+          "type": "String",
+          "info": "User email",
+          "required": true
+        },
+        {
+          "name": "session",
+          "type": "String",
+          "info": "User session obtained from login method",
+          "required": true
+        },
+        {
+          "name": "reportId",
+          "type": "String",
+          "info": "The report id or token. Example: '150' or '123se2'",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "createReport",
+      "description": "Creates a new report",
+      "args": [
+        {
+          "name": "email",
+          "type": "String",
+          "info": "User email",
+          "required": true
+        },
+        {
+          "name": "session",
+          "type": "String",
+          "info": "User session obtained from login method",
+          "required": true
+        },
+        {
+          "name": "searchEngines",
+          "type": "Array",
+          "info": "List of Search Engines (google, googlelocal, yahoo, bing, yandex, youtube, naverwebdocs, naverlocal, baidu,googlenews, googleimages). Default: google",
+          "required": false
+        },
+        {
+          "name": "callback",
+          "type": "String",
+          "info": "Link to callback",
+          "required": false
+        },
+        {
+          "name": "countries",
+          "type": "Array",
+          "info": "Comma-Separated list of Country codes",
+          "required": false
+        },
+        {
+          "name": "ignoreTypes",
+          "type": "Array",
+          "info": "This is an array with 2 letter strings that allow you to make crawler completely ignore a search result type. The options are 'OR' (organic), 'GM' (google maps)",
+          "required": false
+        },
+        {
+          "name": "isFillCities",
+          "type": "Boolean",
+          "info": "If your report has fewer cities than the maxcities, crawler will automatically fill the report cities with the biggest cities from the country.",
+          "required": false
+        },
+        {
+          "name": "isForMobile",
+          "type": "Boolean",
+          "info": "Is this report for mobile platform",
+          "required": false
+        },
+        {
+          "name": "isGlobal",
+          "type": "Boolean",
+          "info": "True if the report is a country-level report.",
+          "required": false
+        },
+        {
+          "name": "monitorId",
+          "type": "Number",
+          "info": "Monitor Id",
+          "required": false
+        },
+        {
+          "name": "isUseAlternativeTld",
+          "type": "Boolean",
+          "info": "If true, it will always use the TLD.com instead of using the local TLDs for each country.",
+          "required": false
+        },
+        {
+          "name": "keywords",
+          "type": "Array",
+          "info": "Comma-Separated list of keywords. You must specify at least one keyword. The keyword must contain at least 3 characters.",
+          "required": true
+        },
+        {
+          "name": "language",
+          "type": "String",
+          "info": "Language",
+          "required": false
+        },
+        {
+          "name": "maxCities",
+          "type": "Number",
+          "info": "",
+          "required": false
+        },
+        {
+          "name": "regions",
+          "type": "Array",
+          "info": "Comma-Separated list of regions. Example [Asia]",
+          "required": false
+        },
+        {
+          "name": "totalResults",
+          "type": "Number",
+          "info": "",
+          "required": false
+        },
+        {
+          "name": "type",
+          "type": "String",
+          "info": "ranktracker, heatmap, 1stpage, advertisers, authors, citations, sitereport and keywordrankings",
+          "required": true
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "Url. Required with ranktracker type.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "deleteSingleReport",
+      "description": "Delete the report",
+      "args": [
+        {
+          "name": "email",
+          "type": "String",
+          "info": "User email",
+          "required": true
+        },
+        {
+          "name": "session",
+          "type": "String",
+          "info": "User session obtained from login method",
+          "required": true
+        },
+        {
+          "name": "report",
+          "type": "String",
+          "info": "Report id or token. Exmaple '150' or '123ads4'",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getChartingData",
+      "description": "Read the data for charting",
+      "args": [
+        {
+          "name": "email",
+          "type": "String",
+          "info": "User email",
+          "required": true
+        },
+        {
+          "name": "session",
+          "type": "String",
+          "info": "User session obtained from login method",
+          "required": true
+        },
+        {
+          "name": "report",
+          "type": "String",
+          "info": "Report id or token. Exmaple '150' or '123ads4'",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getReportRankTrackerData",
+      "description": "Read the Rank Tracker data from a Report",
+      "args": [
+        {
+          "name": "email",
+          "type": "String",
+          "info": "User email",
+          "required": true
+        },
+        {
+          "name": "session",
+          "type": "String",
+          "info": "User session obtained from login method",
+          "required": true
+        },
+        {
+          "name": "report",
+          "type": "String",
+          "info": "Report id or token. Exmaple '150' or '123ads4'",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getReportFirstPageData",
+      "description": "Read the First Page data from a Report",
+      "args": [
+        {
+          "name": "email",
+          "type": "String",
+          "info": "User email",
+          "required": true
+        },
+        {
+          "name": "session",
+          "type": "String",
+          "info": "User session obtained from login method",
+          "required": true
+        },
+        {
+          "name": "report",
+          "type": "String",
+          "info": "Report id or token. Exmaple '150' or '123ads4'",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getReportAdvertisersData",
+      "description": "Read the Advertisers data from a Report",
+      "args": [
+        {
+          "name": "email",
+          "type": "String",
+          "info": "User email",
+          "required": true
+        },
+        {
+          "name": "session",
+          "type": "String",
+          "info": "User session obtained from login method",
+          "required": true
+        },
+        {
+          "name": "report",
+          "type": "String",
+          "info": "Report id or token. Exmaple '150' or '123ads4'",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getReportHeatmapData",
+      "description": "Read the Heatmap data from a Report",
+      "args": [
+        {
+          "name": "email",
+          "type": "String",
+          "info": "User email",
+          "required": true
+        },
+        {
+          "name": "session",
+          "type": "String",
+          "info": "User session obtained from login method",
+          "required": true
+        },
+        {
+          "name": "report",
+          "type": "String",
+          "info": "Report id or token. Exmaple '150' or '123ads4'",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getReportAuthorsData",
+      "description": "Read the Authors data from a Report",
+      "args": [
+        {
+          "name": "email",
+          "type": "String",
+          "info": "User email",
+          "required": true
+        },
+        {
+          "name": "session",
+          "type": "String",
+          "info": "User session obtained from login method",
+          "required": true
+        },
+        {
+          "name": "report",
+          "type": "String",
+          "info": "Report id or token. Exmaple '150' or '123ads4'",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getReportCitationsData",
+      "description": "Read the Citations data from a Report",
+      "args": [
+        {
+          "name": "email",
+          "type": "String",
+          "info": "User email",
+          "required": true
+        },
+        {
+          "name": "session",
+          "type": "String",
+          "info": "User session obtained from login method",
+          "required": true
+        },
+        {
+          "name": "report",
+          "type": "String",
+          "info": "Report id or token. Exmaple '150' or '123ads4'",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getReportKeywordRankingsData",
+      "description": "Read the KeywordRankings data from a Report",
+      "args": [
+        {
+          "name": "email",
+          "type": "String",
+          "info": "User email",
+          "required": true
+        },
+        {
+          "name": "session",
+          "type": "String",
+          "info": "User session obtained from login method",
+          "required": true
+        },
+        {
+          "name": "report",
+          "type": "String",
+          "info": "Report id or token. Exmaple '150' or '123ads4'",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getMonitors",
+      "description": "Read the list of monitors",
+      "args": [
+        {
+          "name": "email",
+          "type": "String",
+          "info": "User email",
+          "required": true
+        },
+        {
+          "name": "session",
+          "type": "String",
+          "info": "User session obtained from login method",
+          "required": true
+        },
+        {
+          "name": "pageNum",
+          "type": "Number",
+          "info": "The page number. Default: 1",
+          "required": false
+        },
+        {
+          "name": "itemsPerPage",
+          "type": "Number",
+          "info": "The max number of monitors that each page will contain. Default: 30",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "createMonitorLinkedToReport",
+      "description": "Creates a monitor linked to a report already created",
+      "args": [
+        {
+          "name": "email",
+          "type": "String",
+          "info": "User email",
+          "required": true
+        },
+        {
+          "name": "session",
+          "type": "String",
+          "info": "User session obtained from login method",
+          "required": true
+        },
+        {
+          "name": "reportId",
+          "type": "Number",
+          "info": "The report id. Example: '105'",
+          "required": true
+        },
+        {
+          "name": "monitorType",
+          "type": "String",
+          "info": "Type of Monitor: ranktracker, heatmap, firstpage, advertisers, authors, citations, keywordrankings",
+          "required": true
+        },
+        {
+          "name": "isSendEmail",
+          "type": "Boolean",
+          "info": "Email alerts on significant changes",
+          "required": false
+        },
+        {
+          "name": "periodicity",
+          "type": "String",
+          "info": "d - Daily, w - Weekly, f - Fortnightly, m - Monthly",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getSingleMonitorData",
+      "description": "Read the full list of languages",
+      "args": [
+        {
+          "name": "email",
+          "type": "String",
+          "info": "User email",
+          "required": true
+        },
+        {
+          "name": "session",
+          "type": "String",
+          "info": "User session obtained from login method",
+          "required": true
+        },
+        {
+          "name": "monitorId",
+          "type": "Number",
+          "info": "The monitor id. Example: '105'",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "updateSingleMonitorNotification",
+      "description": "Enable or disable notification for current monitorId",
+      "args": [
+        {
+          "name": "email",
+          "type": "String",
+          "info": "User email",
+          "required": true
+        },
+        {
+          "name": "session",
+          "type": "String",
+          "info": "User session obtained from login method",
+          "required": true
+        },
+        {
+          "name": "monitorId",
+          "type": "Number",
+          "info": "The monitor id. Example: '105'",
+          "required": true
+        },
+        {
+          "name": "notification",
+          "type": "Boolean",
+          "info": "Enable/disable monitor notification",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "updateSingleMonitorPeriodicity",
+      "description": "Update the monitor periodicity",
+      "args": [
+        {
+          "name": "email",
+          "type": "String",
+          "info": "User email",
+          "required": true
+        },
+        {
+          "name": "session",
+          "type": "String",
+          "info": "User session obtained from login method",
+          "required": true
+        },
+        {
+          "name": "monitorId",
+          "type": "Number",
+          "info": "The monitor id. Example: '105'",
+          "required": true
+        },
+        {
+          "name": "Periodicity",
+          "type": "String",
+          "info": "d - Daily, w - Weekly, f - Fortnightly, m - Monthly",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "updateSingleMonitorStatus",
+      "description": "Update the monitor status",
+      "args": [
+        {
+          "name": "email",
+          "type": "String",
+          "info": "User email",
+          "required": true
+        },
+        {
+          "name": "session",
+          "type": "String",
+          "info": "User session obtained from login method",
+          "required": true
+        },
+        {
+          "name": "monitorId",
+          "type": "Number",
+          "info": "The monitor id. Example: '105'",
+          "required": true
+        },
+        {
+          "name": "monitorStatus",
+          "type": "Boolean",
+          "info": "Activate or deactivate monitor",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "deleteSingleMonitor",
+      "description": "Delete the monitor",
+      "args": [
+        {
+          "name": "email",
+          "type": "String",
+          "info": "User email",
+          "required": true
+        },
+        {
+          "name": "session",
+          "type": "String",
+          "info": "User session obtained from login method",
+          "required": true
+        },
+        {
+          "name": "monitorId",
+          "type": "Number",
+          "info": "The monitor id. Example: '105'",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getSingleUser",
+      "description": "Read the basic information about the user",
+      "args": [
+        {
+          "name": "email",
+          "type": "String",
+          "info": "User email",
+          "required": true
+        },
+        {
+          "name": "session",
+          "type": "String",
+          "info": "User session obtained from login method",
+          "required": true
+        },
+        {
+          "name": "userId",
+          "type": "Number",
+          "info": "The user id. Example: '1034'",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getPartnerUsers",
+      "description": "Read the list of users linked to the partner",
+      "args": [
+        {
+          "name": "email",
+          "type": "String",
+          "info": "The PARTNER email",
+          "required": true
+        },
+        {
+          "name": "session",
+          "type": "String",
+          "info": "The session token of the logged-in PARTNER, obtained by calling the login command",
+          "required": true
+        },
+        {
+          "name": "pageNum",
+          "type": "Number",
+          "info": "The page number. Default: 1",
+          "required": false
+        },
+        {
+          "name": "itemsPerPage",
+          "type": "Number",
+          "info": "The max number of reports that each page will contain. Default: 30",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "createPartnerUser",
+      "description": "Creates a user linked to the partner",
+      "args": [
+        {
+          "name": "email",
+          "type": "String",
+          "info": "The PARTNER email",
+          "required": true
+        },
+        {
+          "name": "session",
+          "type": "String",
+          "info": "The session token of the logged-in PARTNER, obtained by calling the login command",
+          "required": true
+        },
+        {
+          "name": "newUserEmail",
+          "type": "String",
+          "info": "Email of new User",
+          "required": true
+        },
+        {
+          "name": "newUserName",
+          "type": "String",
+          "info": "Name of new User",
+          "required": true
+        },
+        {
+          "name": "newUserPlan",
+          "type": "String",
+          "info": "Plan",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "updateUserPlan",
+      "description": "Upgrade the user plan removing the old plan and the old credits",
+      "args": [
+        {
+          "name": "email",
+          "type": "String",
+          "info": "The PARTNER email",
+          "required": true
+        },
+        {
+          "name": "session",
+          "type": "String",
+          "info": "The session token of the logged-in PARTNER, obtained by calling the login command",
+          "required": true
+        },
+        {
+          "name": "userId",
+          "type": "Number",
+          "info": "Email of new User",
+          "required": true
+        },
+        {
+          "name": "userPlan",
+          "type": "String",
+          "info": "Name of new User",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }
+  ]
+}
+
