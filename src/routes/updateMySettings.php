@@ -1,6 +1,6 @@
 <?php
 
-$app->post('/api/GeoRanker/updateMySettings', function ($request, $response, $args) {
+$app->post('/api/GeoRanker/updateMySettings', function ($request, $response) {
     /** @var \Slim\Http\Response $response */
     /** @var \Slim\Http\Request $request */
     /** @var \Models\checkRequest $checkRequest */
@@ -58,10 +58,15 @@ $app->post('/api/GeoRanker/updateMySettings', function ($request, $response, $ar
             'json' => $params
         ]);
         $vendorResponseBody = $vendorResponse->getBody()->getContents();
-        if (($vendorResponse->getStatusCode() == 200 || $vendorResponse->getStatusCode() == 204)) {
+        if ($vendorResponse->getStatusCode() == 200) {
             $result['callback'] = 'success';
             $result['contextWrites']['to'] = json_decode($vendorResponse->getBody());
-        } else {
+        }
+        elseif ($vendorResponse->getStatusCode() == 204) {
+            $result['callback'] = 'success';
+            $result['contextWrites']['to'] = [];
+        }
+        else {
             $result['callback'] = 'error';
             $result['contextWrites']['to']['status_code'] = 'API_ERROR';
             $result['contextWrites']['to']['status_msg'] = is_array($vendorResponseBody) ? $vendorResponseBody : json_decode($vendorResponseBody);
