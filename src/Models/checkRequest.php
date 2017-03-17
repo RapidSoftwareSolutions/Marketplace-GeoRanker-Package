@@ -28,7 +28,19 @@ class checkRequest
         } else {
             if (!empty($reqFields)) {
                 foreach ($reqFields as $item) {
-                    if (isset($post_data['args'][$item]) && strlen($post_data['args'][$item]) == 0) {
+                    if (isset($post_data['args'][$item])) {
+                        if (is_array($post_data['args'][$item])) {
+                            if (empty($post_data['args'][$item])) {
+                                $error[] = $item;
+                            }
+                        }
+                        else {
+                            if (strlen($post_data['args'][$item]) == 0) {
+                                $error[] = $item;
+                            }
+                        }
+                    }
+                    else {
                         $error[] = $item;
                     }
                 }
