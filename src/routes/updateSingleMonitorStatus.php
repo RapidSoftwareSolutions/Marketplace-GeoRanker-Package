@@ -1,6 +1,6 @@
 <?php
 
-$app->post('/api/GeoRanker/updateSingleMonitorStatus', function ($request, $response, $args) {
+$app->post('/api/GeoRanker/updateSingleMonitorStatus', function ($request, $response) {
     /** @var \Slim\Http\Response $response */
     /** @var \Slim\Http\Request $request */
     /** @var \Models\checkRequest $checkRequest */
@@ -15,7 +15,7 @@ $app->post('/api/GeoRanker/updateSingleMonitorStatus', function ($request, $resp
     }
 
     $url = $settings['apiUrl'] . "/monitor/" . $postData['args']['monitorId'] . ".json?";
-    $json['is_active'] = $postData['args']['monitorStatus'];
+    $json['is_active'] = filter_var($postData['args']['monitorStatus'], FILTER_VALIDATE_BOOLEAN);
 
     unset($postData['args']['monitorId']);
     unset($postData['args']['monitorStatus']);

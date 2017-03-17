@@ -28,7 +28,7 @@ class checkRequest
         } else {
             if (!empty($reqFields)) {
                 foreach ($reqFields as $item) {
-                    if (empty($post_data['args'][$item])) {
+                    if (isset($post_data['args'][$item]) && strlen($post_data['args'][$item]) == 0) {
                         $error[] = $item;
                     }
                 }

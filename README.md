@@ -90,7 +90,7 @@ Read the complete data of a language by code
 |--------|-------|----------
 | email  | String| User email
 | session| String| User session obtained from login method
-| code   | String| Language code (example en=English)
+| languageCode| String| Language code (example en=English)
 
 ## GeoRanker.getLanguages
 Read the full list of languages
@@ -273,7 +273,7 @@ Update the monitor periodicity
 | email      | String| User email
 | session    | String| User session obtained from login method
 | monitorId  | Number| The monitor id. Example: '105'
-| Periodicity| String| d - Daily, w - Weekly, f - Fortnightly, m - Monthly
+| periodicity| String| d - Daily, w - Weekly, f - Fortnightly, m - Monthly
 
 ## GeoRanker.updateSingleMonitorStatus
 Update the monitor status

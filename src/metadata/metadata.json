@@ -315,9 +315,9 @@
           "required": true
         },
         {
-          "name": "countryCode",
+          "name": "languageCode",
           "type": "String",
-          "info": "Country code",
+          "info": "Language code (example en=English)",
           "required": true
         }
       ],
@@ -1053,7 +1053,7 @@
           "required": true
         },
         {
-          "name": "Periodicity",
+          "name": "periodicity",
           "type": "String",
           "info": "d - Daily, w - Weekly, f - Fortnightly, m - Monthly",
           "required": true

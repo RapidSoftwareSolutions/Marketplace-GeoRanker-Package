@@ -7,15 +7,15 @@ $app->post('/api/GeoRanker/getLanguageDataByCode', function ($request, $response
 
     $settings = $this->settings;
     $checkRequest = $this->validation;
-    $validateRes = $checkRequest->validate($request, ['email', 'session', 'countryCode']);
+    $validateRes = $checkRequest->validate($request, ['email', 'session', 'languageCode']);
     if (!empty($validateRes) && isset($validateRes['callback']) && $validateRes['callback'] == 'error') {
         return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($validateRes);
     } else {
         $postData = $validateRes;
     }
 
-    $url = $settings['apiUrl'] . "/language/" . $postData['args']['countryCode'] . ".json?";
-    unset($postData['args']['countryCode']);
+    $url = $settings['apiUrl'] . "/language/" . $postData['args']['languageCode'] . ".json?";
+    unset($postData['args']['languageCode']);
 
     try {
         /** @var GuzzleHttp\Client $client */
