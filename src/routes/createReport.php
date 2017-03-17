@@ -1,6 +1,6 @@
 <?php
 
-$app->post('/api/GeoRanker/createReport', function ($request, $response, $args) {
+$app->post('/api/GeoRanker/createReport', function ($request, $response) {
     /** @var \Slim\Http\Response $response */
     /** @var \Slim\Http\Request $request */
     /** @var \Models\checkRequest $checkRequest */
@@ -30,19 +30,19 @@ $app->post('/api/GeoRanker/createReport', function ($request, $response, $args) 
         $json['ignoretypes'] = $postData['args']['ignoreTypes'];
     }
     if (isset($postData['args']['isFillCities']) && strlen($postData['args']['isFillCities']) > 0) {
-        $json['is_fillcities'] = $postData['args']['isFillCities'];
+        $json['is_fillcities'] = filter_var($postData['args']['isFillCities'], FILTER_VALIDATE_BOOLEAN);
     }
     if (isset($postData['args']['isForMobile']) && strlen($postData['args']['isForMobile']) > 0) {
-        $json['is_formobile'] = $postData['args']['isForMobile'];
+        $json['is_formobile'] = filter_var($postData['args']['isForMobile'], FILTER_VALIDATE_BOOLEAN);
     }
     if (isset($postData['args']['isGlobal']) && strlen($postData['args']['isGlobal']) > 0) {
-        $json['is_global'] = $postData['args']['isGlobal'];
+        $json['is_global'] = filter_var($postData['args']['isGlobal'], FILTER_VALIDATE_BOOLEAN);
     }
     if (isset($postData['args']['monitorId']) && strlen($postData['args']['monitorId']) > 0) {
         $json['monitor_id'] = $postData['args']['monitorId'];
     }
     if (isset($postData['args']['isUseAlternativeTld']) && strlen($postData['args']['isUseAlternativeTld']) > 0) {
-        $json['is_usealternativetld'] = $postData['args']['isUseAlternativeTld'];
+        $json['is_usealternativetld'] = filter_var($postData['args']['isUseAlternativeTld'], FILTER_VALIDATE_BOOLEAN);
     }
     if (isset($postData['args']['language']) && strlen($postData['args']['language']) > 0) {
         $json['language'] = $postData['args']['language'];
