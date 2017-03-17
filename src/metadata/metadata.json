@@ -417,7 +417,7 @@
           "required": true
         },
         {
-          "name": "reportId",
+          "name": "report",
           "type": "String",
           "info": "The report id or token. Example: '150' or '123se2'",
           "required": true
