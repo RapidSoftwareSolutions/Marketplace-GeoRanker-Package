@@ -1,6 +1,6 @@
 <?php
 
-$app->post('/api/GeoRanker/deleteSingleMonitor', function ($request, $response, $args) {
+$app->post('/api/GeoRanker/deleteSingleMonitor', function ($request, $response) {
     /** @var \Slim\Http\Response $response */
     /** @var \Slim\Http\Request $request */
     /** @var \Models\checkRequest $checkRequest */
