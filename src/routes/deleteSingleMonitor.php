@@ -24,10 +24,15 @@ $app->post('/api/GeoRanker/deleteSingleMonitor', function ($request, $response, 
             'query' => $postData['args']
         ]);
         $vendorResponseBody = $vendorResponse->getBody()->getContents();
-        if (in_array($vendorResponse->getStatusCode(), range(200,204))) {
+        if ($vendorResponse->getStatusCode() == 200) {
             $result['callback'] = 'success';
             $result['contextWrites']['to'] = json_decode($vendorResponse->getBody());
-        } else {
+        }
+        elseif ($vendorResponse->getStatusCode() == 204) {
+            $result['callback'] = 'success';
+            $result['contextWrites']['to'] = [];
+        }
+        else {
             $result['callback'] = 'error';
             $result['contextWrites']['to']['status_code'] = 'API_ERROR';
             $result['contextWrites']['to']['status_msg'] = is_array($vendorResponseBody) ? $vendorResponseBody : json_decode($vendorResponseBody);
