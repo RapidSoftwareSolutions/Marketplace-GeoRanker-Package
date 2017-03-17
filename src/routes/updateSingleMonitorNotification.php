@@ -1,6 +1,6 @@
 <?php
 
-$app->post('/api/GeoRanker/updateSingleMonitorNotification', function ($request, $response, $args) {
+$app->post('/api/GeoRanker/updateSingleMonitorNotification', function ($request, $response) {
     /** @var \Slim\Http\Response $response */
     /** @var \Slim\Http\Request $request */
     /** @var \Models\checkRequest $checkRequest */
@@ -15,7 +15,7 @@ $app->post('/api/GeoRanker/updateSingleMonitorNotification', function ($request,
     }
 
     $url = $settings['apiUrl'] . "/monitor/" . $postData['args']['monitorId'] . ".json?";
-    $json['is_sendemail'] = $postData['args']['notification'];
+    $json['is_sendemail'] = (int) filter_var($postData['args']['notification'], FILTER_VALIDATE_BOOLEAN);
 
     unset($postData['args']['monitorId']);
     unset($postData['args']['notification']);
