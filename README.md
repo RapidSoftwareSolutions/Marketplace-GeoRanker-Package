@@ -1,7 +1,7 @@
 [![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/GeoRanker/functions?utm_source=RapidAPIGitHub_GeoRankerFunctions&utm_medium=button&utm_content=RapidAPI_GitHub)
 # GeoRanker Package
 Get real-time search engine optimization data by location.
-* Domain: http://georanker.com
+* Domain: [GeoRanker](https://georanker.com)
 * Credentials: apiKey
 
 ## How to get credentials: 
