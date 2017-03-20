@@ -14,7 +14,7 @@
     "search"
   ],
   "accounts": {
-    "domain": "georanker.com",
+    "domain": "http://georanker.com",
     "credentials": [
       "apiKey"
     ]
