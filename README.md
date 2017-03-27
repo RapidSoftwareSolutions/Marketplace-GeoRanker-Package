@@ -15,7 +15,7 @@ Create a new session key for the user. (Execute this first)
 
 | Field | Type  | Description
 |-------|-------|----------
-| apiKey| String| User apiKey obtained from georanker.com
+| apiKey| credentials| User apiKey obtained from georanker.com
 | email | String| User email adress
 
 ## GeoRanker.getMe
