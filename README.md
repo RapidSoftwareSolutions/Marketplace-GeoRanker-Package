@@ -128,17 +128,17 @@ Creates a new report
 | session               | String | User session obtained from login method
 | searchEngines         | Array  | List of Search Engines (google, googlelocal, yahoo, bing, yandex, youtube, naverwebdocs, naverlocal, baidu,googlenews, googleimages). Default: google
 | callback              | String | Link to callback
-| countries             | Array  | Comma-Separated list of Country codes
+| countries             | Array  | List of Country codes
 | ignoreTypes           | Array  | This is an array with 2 letter strings that allow you to make crawler completely ignore a search result type. The options are 'OR' (organic), 'GM' (google maps)
 | isFillCities          | Boolean| If your report has fewer cities than the maxcities, crawler will automatically fill the report cities with the biggest cities from the country.
 | isForMobile           | Boolean| Is this report for mobile platform
 | isGlobal              | Boolean| True if the report is a country-level report.
 | monitorId             | Number | Monitor Id
 | isUseAlternativeTld   | Boolean| If true, it will always use the TLD.com instead of using the local TLDs for each country.
-| keywords              | Array  | Comma-Separated list of keywords. You must specify at least one keyword. The keyword must contain at least 3 characters.
+| keywords              | Array  | List of keywords. You must specify at least one keyword. The keyword must contain at least 3 characters.
 | language              | String | Language code
 | maxCities             | Number | Max City count
-| regions               | Array  | Comma-Separated list of cities
+| regions               | Array  | List of cities
 | totalResults          | Number | The maximum amount of results we will crawl. Usually, you want to keep this at 100. 
 | type                  | String | ranktracker, heatmap, 1stpage, advertisers, authors, citations, sitereport and keywordrankings
 | url                   | String | Url. Required with ranktracker type.

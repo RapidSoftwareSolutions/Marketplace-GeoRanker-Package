@@ -454,7 +454,12 @@
           "name": "searchEngines",
           "type": "Array",
           "info": "List of Search Engines (google, googlelocal, yahoo, bing, yandex, youtube, naverwebdocs, naverlocal, baidu,googlenews, googleimages). Default: google",
-          "required": false
+          "required": false,
+          "structure": {
+            "name": "engine",
+            "type": "String",
+            "info": "Search engine"
+          }
         },
         {
           "name": "callback",
@@ -465,14 +470,24 @@
         {
           "name": "countries",
           "type": "Array",
-          "info": "Comma-Separated list of Country codes",
-          "required": false
+          "info": "List of Country codes",
+          "required": false,
+          "structure": {
+            "name": "countryCode",
+            "type": "String",
+            "info": "Country Code"
+          }
         },
         {
           "name": "ignoreTypes",
           "type": "Array",
           "info": "This is an array with 2 letter strings that allow you to make crawler completely ignore a search result type. The options are 'OR' (organic), 'GM' (google maps)",
-          "required": false
+          "required": false,
+          "structure": {
+            "name": "type",
+            "type": "String",
+            "info": "Ignore type"
+          }
         },
         {
           "name": "isFillCities",
@@ -507,8 +522,13 @@
         {
           "name": "keywords",
           "type": "Array",
-          "info": "Comma-Separated list of keywords. You must specify at least one keyword. The keyword must contain at least 3 characters.",
-          "required": true
+          "info": "List of keywords. You must specify at least one keyword. The keyword must contain at least 3 characters.",
+          "required": true,
+          "structure": {
+            "name": "keyword",
+            "type": "String",
+            "info": "Keyword"
+          }
         },
         {
           "name": "language",
@@ -525,8 +545,13 @@
         {
           "name": "regions",
           "type": "Array",
-          "info": "Comma-Separated list of regions. Example [Asia]",
-          "required": false
+          "info": "List of regions. Example [Asia]",
+          "required": false,
+          "structure": {
+            "name": "region",
+            "type": "String",
+            "info": "Region"
+          }
         },
         {
           "name": "totalResults",
@@ -536,8 +561,18 @@
         },
         {
           "name": "type",
-          "type": "String",
-          "info": "ranktracker, heatmap, 1stpage, advertisers, authors, citations, sitereport and keywordrankings",
+          "type": "Select",
+          "options": [
+            "ranktracker",
+            "heatmap",
+            "1stpage",
+            "advertisers",
+            "authors",
+            "citations",
+            "sitereport",
+            "keywordrankings"
+          ],
+          "info": "Type of report",
           "required": true
         },
         {
@@ -928,8 +963,17 @@
         },
         {
           "name": "monitorType",
-          "type": "String",
-          "info": "Type of Monitor: ranktracker, heatmap, firstpage, advertisers, authors, citations, keywordrankings",
+          "type": "Select",
+          "options": [
+            "ranktracker",
+            "heatmap",
+            "firstpage",
+            "advertisers",
+            "authors",
+            "citations",
+            "keywordrankings"
+          ],
+          "info": "Type of Monitor",
           "required": true
         },
         {
@@ -940,7 +984,8 @@
         },
         {
           "name": "periodicity",
-          "type": "String",
+          "type": "Select",
+          "options": ["d", "w", "f", "m"],
           "info": "d - Daily, w - Weekly, f - Fortnightly, m - Monthly",
           "required": false
         }
@@ -1054,7 +1099,8 @@
         },
         {
           "name": "periodicity",
-          "type": "String",
+          "type": "Select",
+          "options": ["d", "w", "f", "m"],
           "info": "d - Daily, w - Weekly, f - Fortnightly, m - Monthly",
           "required": true
         }
