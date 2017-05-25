@@ -452,7 +452,7 @@
         },
         {
           "name": "searchEngines",
-          "type": "Array",
+          "type": "List",
           "info": "List of Search Engines (google, googlelocal, yahoo, bing, yandex, youtube, naverwebdocs, naverlocal, baidu,googlenews, googleimages). Default: google",
           "required": false,
           "structure": {
@@ -469,7 +469,7 @@
         },
         {
           "name": "countries",
-          "type": "Array",
+          "type": "List",
           "info": "List of Country codes",
           "required": false,
           "structure": {
@@ -480,8 +480,8 @@
         },
         {
           "name": "ignoreTypes",
-          "type": "Array",
-          "info": "This is an array with 2 letter strings that allow you to make crawler completely ignore a search result type. The options are 'OR' (organic), 'GM' (google maps)",
+          "type": "List",
+          "info": "This is a list with 2 letter strings that allow you to make crawler completely ignore a search result type. The options are 'OR' (organic), 'GM' (google maps)",
           "required": false,
           "structure": {
             "name": "type",
@@ -521,7 +521,7 @@
         },
         {
           "name": "keywords",
-          "type": "Array",
+          "type": "List",
           "info": "List of keywords. You must specify at least one keyword. The keyword must contain at least 3 characters.",
           "required": true,
           "structure": {
@@ -544,7 +544,7 @@
         },
         {
           "name": "regions",
-          "type": "Array",
+          "type": "List",
           "info": "List of regions. Example [Asia]",
           "required": false,
           "structure": {
