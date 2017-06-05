@@ -7,6 +7,16 @@ Get real-time search engine optimization data by location.
 ## How to get credentials: 
 1. Get apiKey from [GeoRanker](https://www.georanker.com/settings) 
 
+
+## Custom datatypes: 
+ |Datatype|Description|Example
+ |--------|-----------|----------
+ |Datepicker|String which includes date and time|```2016-05-28 00:00:00```
+ |Map|String which includes latitude and longitude coma separated|```50.37, 26.56```
+ |List|Simple array|```["123", "sample"]``` 
+ |Select|String with predefined values|```sample```
+ |Array|Array of objects|```[{"Second name":"123","Age":"12","Photo":"sdf","Draft":"sdfsdf"},{"name":"adi","Second name":"bla","Age":"4","Photo":"asfserwe","Draft":"sdfsdf"}] ```
+
 ## How to get session
 1. Session and session expires date will be in response to your GeoRanker.login request with your apiKey and email. 
 
@@ -126,21 +136,21 @@ Creates a new report
 |-----------------------|--------|----------
 | email                 | String | User email
 | session               | String | User session obtained from login method
-| searchEngines         | Array  | List of Search Engines (google, googlelocal, yahoo, bing, yandex, youtube, naverwebdocs, naverlocal, baidu,googlenews, googleimages). Default: google
+| searchEngines         | List   | List of Search Engines (google, googlelocal, yahoo, bing, yandex, youtube, naverwebdocs, naverlocal, baidu,googlenews, googleimages). Default: google
 | callback              | String | Link to callback
-| countries             | Array  | List of Country codes. Use this param or Region 
-| ignoreTypes           | Array  | This is an array with 2 letter strings that allow you to make crawler completely ignore a search result type. The options are 'OR' (organic), 'GM' (google maps)
+| countries             | List   | List of Country codes. Use this param or Region 
+| ignoreTypes           | List   | This is an array with 2 letter strings that allow you to make crawler completely ignore a search result type. The options are 'OR' (organic), 'GM' (google maps)
 | isFillCities          | Boolean| If your report has fewer cities than the maxcities, crawler will automatically fill the report cities with the biggest cities from the country.
 | isForMobile           | Boolean| Is this report for mobile platform
 | isGlobal              | Boolean| True if the report is a country-level report.
 | monitorId             | Number | Monitor Id
 | isUseAlternativeTld   | Boolean| If true, it will always use the TLD.com instead of using the local TLDs for each country.
-| keywords              | Array  | List of keywords. You must specify at least one keyword. The keyword must contain at least 3 characters.
+| keywords              | List   | List of keywords. You must specify at least one keyword. The keyword must contain at least 3 characters.
 | language              | String | Language code
 | maxCities             | Number | Max City count
-| regions               | Array  | List of cities. Use this param or countries 
+| regions               | List   | List of cities. Use this param or countries 
 | totalResults          | Number | The maximum amount of results we will crawl. Usually, you want to keep this at 100. 
-| type                  | String | ranktracker, heatmap, 1stpage, advertisers, authors, citations, sitereport and keywordrankings
+| type                  | Select | ranktracker, heatmap, 1stpage, advertisers, authors, citations, sitereport and keywordrankings
 | url                   | String | Url. Required with ranktracker type.
 
 ## GeoRanker.deleteSingleReport
@@ -242,9 +252,9 @@ Creates a monitor linked to a report already created
 | email      | String | User email
 | session    | String | User session obtained from login method
 | reportId   | Number | The report id. Example: '105'
-| monitorType| String | Type of Monitor: ranktracker, heatmap, firstpage, advertisers, authors, citations, keywordrankings
+| monitorType| Select | Type of Monitor: ranktracker, heatmap, firstpage, advertisers, authors, citations, keywordrankings
 | isSendEmail| Boolean| Email alerts on significant changes
-| periodicity| String | d - Daily, w - Weekly, f - Fortnightly, m - Monthly
+| periodicity| Select | d - Daily, w - Weekly, f - Fortnightly, m - Monthly
 
 ## GeoRanker.getSingleMonitorData
 Read the full list of languages
@@ -273,7 +283,7 @@ Update the monitor periodicity
 | email      | String| User email
 | session    | String| User session obtained from login method
 | monitorId  | Number| The monitor id. Example: '105'
-| periodicity| String| d - Daily, w - Weekly, f - Fortnightly, m - Monthly
+| periodicity| Select| d - Daily, w - Weekly, f - Fortnightly, m - Monthly
 
 ## GeoRanker.updateSingleMonitorStatus
 Update the monitor status

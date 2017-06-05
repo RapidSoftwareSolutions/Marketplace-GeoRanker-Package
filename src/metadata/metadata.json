@@ -458,7 +458,8 @@
           "structure": {
             "name": "engine",
             "type": "String",
-            "info": "Search engine"
+            "info": "Search engine",
+            "required": false
           }
         },
         {
@@ -475,7 +476,8 @@
           "structure": {
             "name": "countryCode",
             "type": "String",
-            "info": "Country Code"
+            "info": "Country Code",
+            "required": false
           }
         },
         {
@@ -486,7 +488,8 @@
           "structure": {
             "name": "type",
             "type": "String",
-            "info": "Ignore type"
+            "info": "Ignore type",
+            "required": false
           }
         },
         {
@@ -527,7 +530,8 @@
           "structure": {
             "name": "keyword",
             "type": "String",
-            "info": "Keyword"
+            "info": "Keyword",
+            "required": true
           }
         },
         {
@@ -550,7 +554,8 @@
           "structure": {
             "name": "region",
             "type": "String",
-            "info": "Region"
+            "info": "Region",
+            "requried": false
           }
         },
         {
