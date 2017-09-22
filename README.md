@@ -5,8 +5,7 @@ Get real-time search engine optimization data by location.
 * Credentials: apiKey
 
 ## How to get credentials: 
-1. Get apiKey from [GeoRanker](https://www.georanker.com/settings) 
-
+1. Get an apiKey from [GeoRanker](https://www.georanker.com/settings) 
 
 ## Custom datatypes: 
  |Datatype|Description|Example
