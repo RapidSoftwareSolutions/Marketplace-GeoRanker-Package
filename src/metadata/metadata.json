@@ -19,6 +19,9 @@
       "apiKey"
     ]
   },
+  "steps": [
+    "Get an apiKey from GeoRanker (https://www.georanker.com/settings)"
+  ],
   "blocks": [
     {
       "name": "login",
